@@ -1,0 +1,119 @@
+
+:root {
+    --rojo: hsl(0, 78%, 62%);
+    --cian: hsl(180, 62%, 55%);
+    --naranja: hsl(34, 97%, 64%);
+    --azul: hsl(212, 86%, 64%);
+    --azul-oscuro: hsl(234, 12%, 34%);
+    --gris-azulado: hsl(229, 6%, 66%);
+    --gris-claro: hsl(0, 0%, 98%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--gris-claro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.contenedor {
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* Encabezado */
+.encabezado {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.encabezado .subtitulo {
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: var(--azul-oscuro);
+    display: block;
+}
+
+.encabezado h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--azul-oscuro);
+    margin-bottom: 15px;
+}
+
+.encabezado p {
+    color: var(--gris-azulado);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Grid de Tarjetas */
+.grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: center; /* Alinea las tarjetas laterales al centro verticalmente */
+}
+
+.columna-central {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Estilo Base de Tarjetas */
+.tarjeta {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-top: 4px solid;
+    position: relative;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta h3 {
+    color: var(--azul-oscuro);
+    margin-bottom: 10px;
+}
+
+.tarjeta p {
+    color: var(--gris-azulado);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.tarjeta img {
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+/* Colores de bordes específicos */
+.supervisor { border-top-color: var(--cian); }
+.team-builder { border-top-color: var(--rojo); }
+.karma { border-top-color: var(--naranja); }
+.calculator { border-top-color: var(--azul); }
+
+/* Adaptación para móviles */
+@media (max-width: 950px) {
+    .grid-tarjetas {
+        grid-template-columns: 1fr;
+    }
+    .columna-central {
+        gap: 30px;
+    }
+    .tarjeta {
+        height: auto;
+    }
+}
